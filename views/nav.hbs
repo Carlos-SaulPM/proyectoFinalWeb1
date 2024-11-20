@@ -1,0 +1,11 @@
+<nav>
+  <ul>
+    {{#if user}} <!-- Verifica si el usuario está logueado -->
+      <li>Bienvenido, {{user.nombre}}!</li>
+      <li><a href="/users/logout">Cerrar sesión</a></li>
+    {{else}}
+      <li><a href="/login">Iniciar sesión</a></li>
+      <li><a href="/register">Registrarse</a></li>
+    {{/if}}
+  </ul>
+</nav>
