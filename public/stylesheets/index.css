@@ -1,134 +1,126 @@
+/* Estilos para imágenes */
+#aside .image-wrapper img,
+.carousel-item img,
+.carousel-image-container img,
+.aside-item img,
+.card-img-top {
+  object-fit: cover;
+  background-color: transparent; /* Eliminar fondo blanco para imágenes */
+}
+
+#aside .image-wrapper img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain; /* Diferente de las demás */
+}
+
 .carousel-item img {
-    object-fit: cover;
-    height: 500px; /* Ajusto la altura de las imágenes */
+  height: 500px; /* Altura específica del carrusel */
 }
 
-/* Estilo para los indicadores (circulitos) */
-.carousel-indicators li {
-    background-color: #0d6efd; /* Color azul */
+.aside-item img {
+  width: 50%; /* Imagen ocupa la mitad del cuadro */
+  height: 100%;
 }
 
-/* Estilo para el botón */
-.carousel-caption .btn {
-    position: absolute;
-    bottom: 20px;
-    left: -75px; /* Botón a 5px del borde izquierdo */
-    background: linear-gradient(45deg, #0d6efd, #0a58ca); /* Gradiente azul */
-    color: white; /* Texto blanco */
-    border: none; /* Sin borde */
-    font-size: 20px; /* Aumento el tamaño de la fuente */
-    padding: 12px 30px; /* Aumento el tamaño del botón */
-    border-radius: 8px; /* Bordes redondeados suaves */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
-    transition: all 0.6s ease; /* Transición suave y lenta para el gradiente y sombra */
+.card-img-top {
+  height: 200px; /* Altura específica de las tarjetas */
 }
 
-/* Efecto al pasar el ratón por el botón */
-.carousel-caption .btn:hover {
-    background: linear-gradient(45deg, #0a58ca, #0d6efd); /* Cambio de gradiente en hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Más sombra en hover */
-    transform: scale(1.05); /* Ligera expansión para efecto de profundidad */
+/* Estilos generales para los botones */
+.carousel-caption .btn,
+.card-body .btn {
+  background-image: linear-gradient(
+    to right,
+    #007bff 0%,
+    #17a2b8 51%,
+    #17a2b8 100%
+  ); /* Gradiente azul */
+  max-width: 200px;
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  /* box-shadow: 0 0 20px #eee; */
+  border-radius: 10px;
+
+  border: none;
+  font-size: 20px; /* Tamaño de fuente */
+  padding: 12px 30px;
 }
 
-/* Estilo para el carrusel y su contenedor */
-#gameCarousel {
-    position: relative;
-    width: 75%; /* Carrusel principal ocupa el 75% */
-    border-radius: 15px; /* Borde redondeado en el carrusel */
-    overflow: hidden; /* Asegura que el borde redondeado se mantenga */
+.carousel-caption .btn:hover,
+.card-body .btn:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Efectos de hover */
+.aside-item:hover {
+  background-color: transparent;
+  border-bottom: solid 3px #0d6efd;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más suave */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Estilo para las tarjetas */
+.card {
+  background-color: #4e5f7a; /* Fondo gris oscuro */
+  color: white; /* Texto en blanco */
+  border: none; /* Sin borde visible */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra suave */
 }
 
 /* Estilo para el aside */
 #aside {
-    width: 25%; /* El aside ocupa el 25% */
-    margin-left: 20px; /* Un poco de separación */
-    display: flex;
-    flex-direction: column;
-    gap: 10px; /* Espacio entre los cuadros pequeños */
-    position: relative;
-    max-height: 500px; /* Altura máxima igual a la del carrusel */
-    overflow-y: auto; /* Agrega desplazamiento si los elementos exceden la altura */
+  width: 25%;
+  margin-left: 20px; /* Separación */
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Espaciado */
+  position: relative;
+  max-height: 500px; /* Altura máxima */
+  overflow-y: auto; /* Desplazamiento vertical */
 }
 
-/* Estilo para los cuadros pequeños dentro del aside */
 .aside-item {
-    display: flex;
-    align-items: center;
-    background-color: transparent; /* Fondo claro */
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: opacity 0.5s ease;
-    cursor: pointer; /* Hacer que el cuadro sea interactivo */
-    width: 100%; /* Ocupa el ancho completo del aside */
-    height: 80px; /* Ajuste de altura para que se vean los recuadros pequeños */
+  display: flex;
+  align-items: center;
+  background-color: transparent; /* Fondo claro */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.5s ease;
+  cursor: pointer; /* Interactivo */
+  width: 100%; /* Ancho completo */
+  height: 80px; /* Ajuste de altura */
 }
 
-/* Hacer que la imagen ocupe la mitad del ancho */
-.aside-item img {
-    width: 50%; /* Imagen ocupa la mitad del cuadro */
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Estilo para el texto al lado de la imagen */
 .aside-item .game-name {
-    margin-left: 15px;
-    font-size: 18px;
-    font-weight: bold;
-    color: white; /* Texto en blanco */
-    background: none; /* Sin fondo */
+  margin-left: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background: none;
 }
 
-/* Efecto de difuminado en el aside */
-.aside-item:hover {
-    background-color: transparent;
-    border-bottom: solid 3px #0d6efd; /* Cambia el fondo al pasar el ratón */
+/* Estilos específicos para carrusel */
+#gameCarousel {
+  position: relative;
+  width: 75%; /* Carrusel principal ocupa el 75% */
+  border-radius: 15px; /* Borde redondeado */
+  overflow: hidden; /* Asegura borde redondeado */
 }
 
-/* Efectos de hover para las imágenes dentro del carrusel */
-.carousel-image-container img {
-    object-fit: cover;
-    background-color: transparent; /* Eliminar el fondo blanco */
-    border-radius: 10px;
-}
-
-/* Hover effect for cards */
-.card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más suave */
-}
-
-/* Estilo para el contenedor de texto en las imágenes */
-.game-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Para las imágenes de la tarjeta */
-.card-img-top {
-    object-fit: cover;
-    height: 200px; /* Ajustar al tamaño de las tarjetas */
-    background-color: transparent; /* Eliminar el fondo blanco */
-}
-
-/* Estilos adicionales para eliminar el fondo blanco de las tarjetas */
-.card, .carousel-item {
-    background-color: transparent; /* Eliminar fondo blanco */
-}
-
-/* Estilos de los botones */
-.carousel-caption .btn, .card-body .btn {
-    transition: background-color 0.3s ease-in-out;
-}
-
-.carousel-caption .btn:hover, .card-body .btn:hover {
-    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro al pasar el cursor */
-}
-
-/* Animación más suave para hover en tarjetas */
-.card:hover {
-    transition: transform 0.3s ease-in-out; /* Animación más suave */
+.carousel-indicators li {
+  background-color: #0d6efd; /* Azul */
 }
