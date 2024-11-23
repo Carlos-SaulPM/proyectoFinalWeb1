@@ -3,7 +3,7 @@ var router = express.Router();
 var connection = require("../config/db"); // Conexión a la base de datos
 
 // Ruta para mostrar todos los juegos
-router.get("/games", (req, res) => {
+router.get("/", (req, res) => {
   const { busqueda, genero } = req.query;
 
   // Obtener la lista de géneros disponibles
@@ -36,7 +36,6 @@ router.get("/games", (req, res) => {
           return;
         }
 
-        // Renderizar la vista de juegos y pasar las variables
         res.render("games", {
           juegos,
           generos,
